@@ -4,16 +4,18 @@ import '@/styles/globals.css'
 import { BASE_URL } from '@/utils/constants'
 import axios from 'axios'
 import { useEffect } from 'react'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'] })
 
 function App({ Component, pageProps }) {
   const { setItems, items } = useAppStore()
 
   useEffect(() => {
     !items.length && setItems(pageProps.data)
-
   }, [pageProps.data, items, setItems])
 
-  return <div className='flex flex-col h-screen items-center justify-between p-7'>
+  return <div className={`flex flex-col h-screen justify-between items-center p-8 ${inter.className}`}>
     <Component {...pageProps} />
     <Footer />
   </div>

@@ -1,11 +1,14 @@
+import MovieItem from '@/components/movie/MovieItem'
 import { BASE_URL } from '@/utils/constants'
 import axios from 'axios'
 import React from 'react'
 
 export default function Movie({ movie }) {
-    console.log(movie)
     return (
-        <Movie {...movie} />
+        <div className='flex flex-col items-center justify-center mt-8'>
+            <MovieItem {...movie} />
+        </div>
+
     )
 }
 export async function getServerSideProps({ query }) {
