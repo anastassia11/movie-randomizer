@@ -1,4 +1,4 @@
-import MovieItem from '@/components/movie/MovieItem'
+import MovieItem from '@/components/MovieItem'
 import { BASE_URL } from '@/utils/constants'
 import axios from 'axios'
 import React from 'react'

@@ -1,10 +1,12 @@
 import Image from 'next/image'
-import movieDefaultImg from '../../../public/images/default-movie.jpg'
+import movieDefaultImg from '@/../public/images/default-movie.jpg'
 import { convertDuration } from '@/utils/common'
 import { useState } from 'react'
+import Cast from './Cast'
+import Reviews from './Reviews'
 
 
-export default function MovieItem({ title: { title, image, year, runningTimeInMinutes }, ratings: { rating }, genres, plotOutline, plotSummary }) {
+export default function MovieItem({ id, title: { title, image, year, runningTimeInMinutes }, ratings: { rating }, genres, plotOutline, plotSummary }) {
     const [isOpen, setIsOpen] = useState(false)
     return (
         <div className='flex flex-col w-full lg:w-[60%] items-center lg:items-stretch '>
@@ -40,8 +42,17 @@ export default function MovieItem({ title: { title, image, year, runningTimeInMi
                     </div>
                 </div>
             </div>
-            {isOpen && <div>
-            </div>}
+            {isOpen && (
+                <>
+                    <div>
+                        <Cast id={id} />
+                    </div>
+                    <div>
+                        <Reviews />
+                    </div>
+                </>
+
+            )}
             <button onClick={() => setIsOpen(!isOpen)}
                 className='self-center bg-white py-4 px-16 mt-8 lg:mt-16 w-fit lg:w-[250px] text-black text-center font-semibold rounded-3xl hover:bg-zinc-200 active:bg-zinc-300'>
                 {isOpen ? 'Hide info' : 'View more info'}

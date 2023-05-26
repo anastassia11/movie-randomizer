@@ -1,4 +1,4 @@
-import Footer from '@/components/footer/Footer'
+import Footer from '@/components/Footer'
 import { useAppStore } from '@/store/store'
 import '@/styles/globals.css'
 import { BASE_URL } from '@/utils/constants'

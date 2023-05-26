@@ -1,7 +1,7 @@
 // import { Inter } from 'next/font/google'
 import Image from 'next/image'
 import bg from '../../public/images/bg.png'
-import GetButton from '@/components/buttons/GetButton'
+import GetButton from '@/components/GetButton'
 
 
 // const inter = Inter({ subsets: ['latin'] })
