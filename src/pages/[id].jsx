@@ -1,14 +1,18 @@
+import GetButton from '@/components/GetButton'
 import MovieItem from '@/components/MovieItem'
 import { BASE_URL } from '@/utils/constants'
 import axios from 'axios'
-import React from 'react'
+import Head from 'next/head'
 
 export default function Movie({ movie }) {
     return (
-        <div className='flex flex-col items-center justify-center mt-8'>
+        <>
+            <Head>
+                <title>{movie.title.title}</title>
+            </Head>
+            <GetButton />
             <MovieItem {...movie} />
-        </div>
-
+        </>
     )
 }
 export async function getServerSideProps({ query }) {
